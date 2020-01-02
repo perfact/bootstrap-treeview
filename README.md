@@ -136,7 +136,7 @@ If you want to do more, here's the full node specification
     expanded: true,
     selected: true
   },
-  tags: ['available'],
+  tags: [{text: 'available', class: 'badge-primary'}],
   nodes: [
     {},
     ...
@@ -212,9 +212,18 @@ Whether or not a node is expanded i.e. open.  Takes precedence over global optio
 Whether or not a node is selected.
 
 #### tags
-`Array of Strings`  `Optional`
+`Array of Objects`  `Optional`
 
-Used in conjunction with global showTags option to add additional information to the right of each node; using [Bootstrap Badges](http://getbootstrap.com/components/#badges)
+Used in conjunction with global showTags option to add additional information to the right of each node; using [Bootstrap Badges](https://getbootstrap.com/docs/4.4/components/badge/)
+
+The object must contain a `text` field and a `class` field naming the badge class, e.g. :
+
+```javascript
+{
+  text: 'available',
+  class: 'badge-primary'
+}
+```
 
 ### Extendible
 
